@@ -23,7 +23,8 @@ public class Actor {
         return age;
     }
 
-
-
+    public void display() {
+        System.out.println("Name :" + name + " Gender :" + gender + " Age :" + age);
+    }
 
 }
