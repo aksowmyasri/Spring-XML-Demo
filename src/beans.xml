@@ -2,12 +2,29 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
-       <bean id="actor" class="com.stackroute.domain.Actor">
-           <constructor-arg name="name" value="sowmya"/>
-           <constructor-arg name="gender" value="female"/>
-           <constructor-arg name="age" value="21"/>
-       </bean>
-    <bean name="movieA,movieB" class="com.stackroute.domain.Movie">
-        <constructor-arg name="actor" ref="actor"/>
+    <bean id="actor1" class="com.stackroute.domain.Actor">
+        <constructor-arg name="name" index="0" value="sowmya" type="String"/>
+        <constructor-arg name="gender" index="1" value="female" type="String"/>
+        <constructor-arg name="age" index="2" value="21" type="int"/>
     </bean>
-       </beans>
+    <bean id="actor2" class="com.stackroute.domain.Actor">
+        <constructor-arg name="name" index="0" value="lavanya" type="String"/>
+        <constructor-arg name="gender" index="1" value="female" type="String"/>
+        <constructor-arg name="age" index="2" value="22" type="int"/>
+    </bean>
+    <bean id="actor3" class="com.stackroute.domain.Actor">
+        <constructor-arg name="name" index="0" value="dimpu" type="String"/>
+        <constructor-arg name="gender" index="1" value="female" type="String"/>
+        <constructor-arg name="age" index="2" value="23" type="int"/>
+    </bean>
+
+    <bean name="movieA,movieB" class="com.stackroute.domain.Movie">
+        <constructor-arg>
+            <list>
+                <ref bean="actor1"/>
+                <ref bean="actor2"/>
+                <ref bean="actor3"/>
+            </list>
+        </constructor-arg>
+    </bean>
+</beans>

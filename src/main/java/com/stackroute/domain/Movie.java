@@ -1,15 +1,19 @@
 package com.stackroute.domain;
 
-public class Movie {
-    private Actor actor;
+import java.util.List;
 
-    public Movie(Actor actor) {
+public class Movie {
+    private List<Actor> actor;
+
+    public Movie(List<Actor> actor) {
         this.actor = actor;
     }
 
     public void displayActor()
     {
-        System.out.println("Name of the Actor :"+actor.getName()+"\n"+"Gender :"+actor.getGender()+"\n"+"Age :"+actor.getAge());
+        for(Actor actor: actor) {
+            actor.display();
+        }
     }
 
 

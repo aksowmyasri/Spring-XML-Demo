@@ -7,8 +7,10 @@ public class Main {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("file:src/beans.xml");
         Movie movie = applicationContext.getBean("movieA",Movie.class);
         movie.displayActor();
+        System.out.println();
         Movie movie1 = applicationContext.getBean("movieB",Movie.class);
-        System.out.println(movie==movie1);
+        movie1.displayActor();
+
 
     }
 }
